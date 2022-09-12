@@ -24,10 +24,12 @@ Angular 9 project which connects to a REST API to handle contact creation and ed
 
 This arquitecture documentation was done based on the [C4 Arquitechtural model](https://c4model.com/) Levels 1 and 3.
 
----
-
-![System Context Diagram](/img/Wepsys%20C4%20Model%20-%20System%20Context%20Diagram.jpg)
+You can see it as a PDF [here](/assets/Wepsys%20C4%20Model.pdf.pdf)
 
 ---
 
-![Component Diagram](/img/Wepsys%20C4%20Model%20-%20Component%20Diagram.jpg)
+![System Context Diagram](/assets/Wepsys%20C4%20Model%20-%20System%20Context%20Diagram.jpg)
+
+---
+
+![Component Diagram](/assets/Wepsys%20C4%20Model%20-%20Component%20Diagram.jpg)
