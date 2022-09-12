@@ -1,0 +1,72 @@
+<div class="container lizzie">
+    <div *ngIf="contact" class="col-md-12">
+        <div class="row d-flex justify-content-between randomName">
+            <div class="col-sm-12 col-md-2 ">
+                <button type="button" class="btn btn-primary col-md-12" routerLink="/contacts" >
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+            </div>
+            <div class="col-sm-12 col-md-8">
+                <button type="button" class="btn btn-secondary col-md-12">
+                    {{contact.firstName}} {{contact.lastName}}
+                </button>
+            </div>
+            <div class="col-sm-12 col-md-2">
+                <button type="button" class="btn btn-danger col-md-12" (click)="delete(contact.id)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+            <div class="col-sm-9">
+              <input [(ngModel)]="contact.firstName" type="text" class="form-control form-control-sm" id="name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="surname" class="col-sm-3 col-form-label col-form-label-sm">Last Name</label>
+            <div class="col-sm-9">
+              <input [(ngModel)]="contact.lastName" type="text" class="form-control form-control-sm" id="surname">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label col-form-label-sm">E-Mail</label>
+            <div class="col-sm-9">
+              <input [(ngModel)]="contact.email" type="email" class="form-control form-control-sm" id="email" placeholder="Jhon.doe@example.do">
+            </div>
+        </div>
+
+        <div class="form-group row random-name2">
+            <div class="custom-control custom-checkbox mr-sm-2">
+                <label class="custom-control-label" for="star">Favorited</label>
+                <input [(ngModel)]="contact.favorited" type="checkbox" class="custom-control-input" id="star">
+            </div>
+          </div>
+
+
+            <div class="form-group" >
+                <label for="contact-surname">Phone Numbers</label>
+                <button type="button" class="btn btn-outline-primary ml-2 random-name3" (click)="addPhone()">+</button>
+                <div class="form-row"  style="margin-top:4% ;" *ngFor="let phone of contact.telephones">
+                    <div class="form-group col-md-6">
+                        <input [(ngModel)]="phone.number" placeholder="Phone Number" class="form-control"/>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <select [(ngModel)]="phone.type" class="form-control" placeholder="type">
+                            <option value="" disabled selected>Type</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="Home">Home</option>
+                            <option value="Work">Work</option>
+                            <option value="Fax">Fax</option>
+                          </select>
+                    </div>
+                    <div class="form-group col-md-1">
+                        <button type="button" class="btn btn-sm btn-danger random-name4" (click)="removePhone(this.phone)">X</button>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-success random-button" (click)="save()">Save</button>
+        </div>
+    </div>
+</div>

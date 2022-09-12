@@ -1,0 +1,19 @@
+<div class="container lizzie">
+    <div class="input-group mb-3">
+      <input type="text" #new_field value=""class="form-control" placeholder="search"/>
+      <div class="input-group-append">
+        <button class="btn btn-outline-success" type="button" id="button-addon2" (click)="search(new_field.value)">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  <ul class="list-group" >
+    <li  class="list-group-item" *ngFor = "let contact of contacts">
+      {{contact.firstName}} {{contact.lastName}}
+      <a style="float:right" routerLink="/details/{{contact.id}}" class="badge badge-primary">
+        <i class="fa fa-edit fa-2x"></i>
+      </a>
+    </li>
+  </ul>
+  <button type="button" class="btn btn-success random-button fa fa-plus" routerLink="/details"></button>
+</div>
